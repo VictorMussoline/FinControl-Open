@@ -4,6 +4,8 @@ import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Accounts from './pages/Accounts';
+import Transactions from './pages/Transactions';
+import AddTransaction from './pages/AddTransaction';
 
 import PrivateRoute from './components/PrivateRoute';
 
@@ -26,6 +28,24 @@ function App() {
           }
         />
 
+        <Route
+          path="/transactions"
+          element={
+            <PrivateRoute>
+              <Transactions />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/add-transaction"
+          element={
+            <PrivateRoute>
+              <AddTransaction />
+            </PrivateRoute>
+          }
+        />
+
         {/* Dashboard */}
         <Route
           path="/"
@@ -35,6 +55,7 @@ function App() {
             </PrivateRoute>
           }
         />
+
       </Routes>
     </BrowserRouter>
   );
